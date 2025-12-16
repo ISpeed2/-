@@ -1,0 +1,65 @@
+[gd_scene load_steps=4 format=3 uid="uid://63yr7jyy0j1u"]
+
+[ext_resource type="Script" uid="uid://b3n02c4q0qhqv" path="res://Intro.gd" id="1_vltdc"]
+[ext_resource type="PackedScene" uid="uid://c8xmpnsarrq3v" path="res://Letter.tscn" id="2_33sem"]
+[ext_resource type="PackedScene" uid="uid://cpffyg3dkyxt2" path="res://DialogBox.tscn" id="3_46ak0"]
+
+[node name="Intro" type="Node2D"]
+script = ExtResource("1_vltdc")
+
+[node name="Bg" type="ColorRect" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
+[node name="SchoolLabel" type="Label" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(1e-05, 1e-05)
+size_flags_horizontal = 4
+text = "Поздравляем с окончанием Школы Экзорцистов!
+В скором времени вам поступит письмо с вашим первым заданием.
+Удачи!"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="KnockPlayer" type="AudioStreamPlayer" parent="."]
+
+[node name="Letter" parent="." instance=ExtResource("2_33sem")]
+visible = false
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 0.0
+offset_bottom = 0.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="DialogBox" parent="." instance=ExtResource("3_46ak0")]
+visible = false
+
+[node name="OpenPrompt" type="Label" parent="."]
+visible = false
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -100.5
+offset_top = -11.5
+offset_right = 100.5
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+text = "[ENTER] Открыть письмо"
